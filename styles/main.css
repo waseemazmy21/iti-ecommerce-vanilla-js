@@ -1,0 +1,28 @@
+/* Custom Properties (Variables) */
+:root {
+  /* Colors */
+  --purple-color: #fb2e86;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Shared Component Styles */
+/* Header */
+header {
+  background-color: var(--purple-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
