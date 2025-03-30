@@ -256,15 +256,20 @@ header {
   gap: 15px;
   max-width: 1000px;
 }
+.card img{
+  width: 200px;
+  height: 200px;
+}
 .product-info{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .product-title{
   font-size: 18px;
   color: var(--product-title);
   font-weight: bold;
+  padding-top: 10px;
 }
 .product-pricing{
   display: flex;
