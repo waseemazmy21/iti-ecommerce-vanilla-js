@@ -3,6 +3,20 @@
    License: none (public domain)
 */
 
+/* Start Global Ruls */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 html,
 body,
 div,
@@ -91,6 +105,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -105,17 +120,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,7 +142,78 @@ q:after {
   content: "";
   content: none;
 }
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 800;
+
+  @media (max-width: 500px) {
+    & {
+      font-size: 22px;
+    }
+  }
+}
+
+h3 {
+  font-size: 20px;
+  padding: 10px;
+
+  @media (max-width: 500px) {
+    & {
+      font-size: 18px;
+    }
+  }
+}
+
+h4 {
+  font-size: 18px;
+
+  @media (max-width: 500px) {
+    & {
+      font-size: 20px;
+    }
+  }
+}
+
+button {
+  max-width: 100%;
+  font-size: 1.1rem;
+  display: block;
+  padding: 10px 15px;
+  font-weight: bold;
+  border: none;
+
+  @media (max-width: 500px) {
+    & {
+      font-size: 18px;
+      padding: 7px;
+    }
+  }
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* End Global Roles */

@@ -1,7 +1,12 @@
 /* Custom Properties (Variables) */
 :root {
   /* Colors */
+  --section-padding: 60px;
+  --section-background: #f6f5ff;
+  --text-color: #0d134e;
   --purple-color: #fb2e86;
+  --main-shadow: 0 0 20px 0px #aaa;
+  --transition: .5s
 }
 
 html,
@@ -13,9 +18,76 @@ body {
 
 /* Utility Classes */
 .container {
+  width: 95%;
   max-width: 1280px;
   margin: 0 auto;
 }
+
+.header-page {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+
+  h1 {
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      font-size: 1.3rem;
+    }
+
+    li:not(:first-child):before {
+      content: ".";
+    }
+
+    li:last-child {
+      color: var(--purple-color);
+    }
+  }
+}
+
+.secondary-text {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+  line-height: 1.7;
+  color: #666;
+}
+
+@media (max-width: 500px) {
+  .secondary-text {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  /* display: inline-block; */
+  padding: 15px 30px;
+  border-radius: 15px;
+  letter-spacing: .8px;
+  font-family: system-ui;
+  transition: var(--transition);
+  color: var(--text-color);
+  background-color: #ccc;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--purple-color);
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 14px;
+  }
+}
+
+/* End Componants 'Utility classes' */
 
 /* Shared Component Styles */
 /* Header */
