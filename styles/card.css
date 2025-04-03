@@ -1,0 +1,64 @@
+@import url("./main.css");
+
+.card {
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 485px;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    text-align: center;
+}
+
+.card h5 {
+    font-size:medium;
+    color: var(--midnightblue-color);
+    font-weight: bold;
+}
+
+.card img {
+    width: 300px;
+    height: 388px;
+    
+}
+
+.circle-container{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    height: 25px;
+}
+.circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.buttercup {
+    background-color: var(--buttercup-color);
+}
+
+.purple {
+    background-color: var(--purple-color);
+}
+
+.violet {
+    background-color: var(--violet-color);
+}
+
+.prices{
+    display: flex;
+    justify-content: space-evenly;
+    height: 25px;
+}
+.price {
+    color: var(--midnightblue-color);
+    font-weight: bold;
+    display: inline;
+}
+
+.original-price {
+    color: var(--purple-color);
+    text-decoration: line-through;
+}
