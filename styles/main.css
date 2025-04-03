@@ -83,3 +83,21 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.products-container {
+  justify-content: center;
+  display: flex;
+  margin:auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2%;
+  
+}
+
+.page-title{
+  display: inline;
+  color: var(--midnightblue-color);
+  font-size: x-large;
+  font-weight: bold;
+  padding: 20px;
+}

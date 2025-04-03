@@ -14,7 +14,8 @@ const cart = createElement("a", { "href": "link_to_cart_page" }, header_right_se
 const navbar = createElement("div", { "class": "navbar" }, page);
 const websiteName = createElement("h1", {}, navbar, "EShop!");
 const top_section = createElement("div", { "class": "top-section" }, page);
-
+const page_title = createElement("h1", {"class":"page-title"}, page, "ECommerce Electronics, Accessories and Fashion!");
+const products_container = createElement("div", { "class": "products-container" }, page);
 
 // getProducts() => api to get products data from db
 var productsData = getProducts();
@@ -30,4 +31,4 @@ for (const product of productsData) {
 
 
 
-page.appendChild(fragment)
+products_container.appendChild(fragment)
