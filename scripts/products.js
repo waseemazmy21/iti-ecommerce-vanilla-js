@@ -34,18 +34,43 @@ function printData(){
       });
 }
 printData()
+/* search Data function*/ 
 function searchData(){
-  let searchBar = document.getElementById("search-Data").value.toLowerCase().trim();
+ let searchBar = document.getElementById("search-Data").value.trim();
+ XHR.open("get", URL, true)
+ XHR.onreadystatechange = function(){
+  if (XHR.readyState == 4 && XHR.status == 200){
+    let result = XHR.response;
+    let objectResult = JSON.parse(result)
+    let filterData = objectResult.filter(product => 
+      product.title.toLowerCase().includes(searchBar)
+    );
+    console.log(filterData) 
+  }
+ }
+  XHR.send()
+}
+/*search data by categories and price amd number slice */
+function searchCategory(){
+  let selectedValue = document.getElementById("select-product").value;
+  let selectedNumber = document.getElementById("page-number").value;
 
   XHR.open("get", URL, true)
   XHR.onreadystatechange = function(){
     if (XHR.readyState == 4 && XHR.status == 200){
       let result = XHR.response;
-      let resultObj = JSON.parse(result);
-      let filtereData = resultObj.filter(product => 
-        product.title.toLowerCase().includes(searchBar)
-      )
-      console.log(filtereData);
+      let ObjectResult = JSON.parse(result);
+      let sortData;
+
+      if (selectedValue == "category"){
+        sortData = ObjectResult.sort((a, b) => a.category.localeCompare(b.category))
+      } else if (selectedValue == "price"){
+        sortData = ObjectResult.sort((num1, num2) => num1.price - num2.price)
+      } else {
+        sortData = ObjectResult;
+      }
+      sortData = sortData.slice(0, selectedNumber)
+      console.log(sortData)
     }
   }
   XHR.send()
