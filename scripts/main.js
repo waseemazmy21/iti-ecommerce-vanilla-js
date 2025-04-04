@@ -18,7 +18,7 @@ const page_title = createElement("h1", {"class":"page-title"}, page, "ECommerce 
 const products_container = createElement("div", { "class": "products-container" }, page);
 
 // getProducts() => api to get products data from db
-var productsData = getProducts();
+var productsData = getProducts().slice(0,12);
 
 
 // building the productCards inside a fragment

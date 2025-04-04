@@ -15,6 +15,7 @@ export function createElement(tag, attributes = {}, parent, textContent = "") {
 export function createProductCard(product) {
     const prodCard = createElement("div", { "class": "card" });
     const img = createElement("img", { "src": product["image"], "alt": product["title"] }, prodCard);
+    const add_cart = createElement("a", {"class":"cart-button", "href":"./index.html"}, prodCard, "\u{1F6D2}");
     const prod_title = createElement("h5", {}, prodCard, product["title"].split(' ').slice(0, 5).join(' '));
     const circles = createElement("div", { "class": "circle-container" }, prodCard);
     const butterup = createElement("div", { "class": "circle buttercup" }, circles);

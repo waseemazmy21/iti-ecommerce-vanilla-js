@@ -1,16 +1,35 @@
 @import url("./main.css");
 
 .card {
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
-    width: 300px;
-    height: 485px;
+    width: 200px;
+    height: 323px;
     margin: 10px;
     padding: 10px;
     float: left;
     text-align: center;
-    border-radius: 20px;
+    position: relative;
 }
 
+.card img:hover{
+    box-shadow: 0 4px 15px 0 var(--violet-color);
+
+}
+.card img:hover ~ .cart-button {
+    display:inline-block;
+}
+
+.cart-button {
+    display: none;
+    position:absolute;
+    top: 150px;
+    right: 150px;
+    z-index: 3; 
+    font-size: small;
+    border-radius: 50%;
+    background-color: var(--solitude-color);   
+    box-shadow: 0 1px 3px 0 var(--violet-color);
+
+}
 .card h5 {
     font-size:medium;
     color: var(--midnightblue-color);
@@ -18,13 +37,19 @@
 }
 
 .card img {
-    width: 300px;
-    height: 388px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
     
 }
 
 .circle-container{
-    width: 300px;
+    width: 200px;
     display: flex;
     justify-content: center;
     height: 25px;
