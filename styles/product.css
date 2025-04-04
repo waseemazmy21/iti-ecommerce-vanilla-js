@@ -1,3 +1,72 @@
+h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+
+    @media (min-width: 1200px) {
+        & {
+            font-size: 45px;
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        & {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 800;
+
+    @media (max-width: 500px) {
+        & {
+            font-size: 22px;
+        }
+    }
+}
+
+h3 {
+    font-size: 20px;
+    padding: 10px;
+
+    @media (max-width: 500px) {
+        & {
+            font-size: 18px;
+        }
+    }
+}
+
+h4 {
+    font-size: 18px;
+
+    @media (max-width: 500px) {
+        & {
+            font-size: 20px;
+        }
+    }
+}
+
+button {
+    max-width: 100%;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+
+    @media (max-width: 500px) {
+        & {
+            font-size: 18px;
+            padding: 7px;
+        }
+    }
+}
+
 #Product-page {
     .container {
         padding-top: var(--section-padding);
