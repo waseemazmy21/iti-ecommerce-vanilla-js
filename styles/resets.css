@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+/* Start Global Ruls */
+
 html,
 body,
 div,
@@ -123,6 +125,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
