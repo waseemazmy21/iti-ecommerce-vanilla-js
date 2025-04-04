@@ -17,7 +17,7 @@ getData();
 function printData(){
     getData(function(resObj) {
       let productCard = document.querySelector(".products");
-      resObj.slice(1, 3).forEach(item => {
+      resObj.slice(1, 7).forEach(item => {
         let productContainer = document.createElement("div");
         productContainer.classList.add("card");
         productContainer.innerHTML = 
@@ -34,3 +34,19 @@ function printData(){
       });
 }
 printData()
+function searchData(){
+  let searchBar = document.getElementById("search-Data").value.toLowerCase().trim();
+
+  XHR.open("get", URL, true)
+  XHR.onreadystatechange = function(){
+    if (XHR.readyState == 4 && XHR.status == 200){
+      let result = XHR.response;
+      let resultObj = JSON.parse(result);
+      let filtereData = resultObj.filter(product => 
+        product.title.toLowerCase().includes(searchBar)
+      )
+      console.log(filtereData);
+    }
+  }
+  XHR.send()
+}
