@@ -110,6 +110,7 @@
     width: 200px;
     height: 200px;
     border-radius: 10px;
+    flex-shrink: 0;
   }
   
   .product-info {
@@ -141,4 +142,18 @@
     flex-wrap: wrap;
     margin-left: 200px;
   }
-  
+  .card-submit-btn{
+    background-color: var(--hero-section-primary-color);
+    color: white;
+    padding: 10px 20px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.6s all ease-in-out;
+    cursor: pointer;
+  }
+  .card-submit-btn:hover{
+    color: var(--hero-section-primary-color);
+    transition: 0.8s all ease-in-out;
+    background-color: white;
+  }

@@ -14,11 +14,10 @@ function getData(Data){
   XHR.send();
 }
 getData();
-
 function printData(){
     getData(function(resObj) {
       let productCard = document.querySelector(".products");
-      resObj.slice(0, 20).forEach(item => {
+      resObj.forEach(item => {
         let productContainer = document.createElement("div");
         productContainer.classList.add("card");
         productContainer.innerHTML = 
@@ -28,6 +27,7 @@ function printData(){
         <h3 class="product-des">${item.category}</h3>
         <span class="original-price">$${item.price}</span>
         <p>${item.description}</p>
+        <a href="product.html?id=${item.id}"><button class="card-submit-btn">Submit</button></a>
         </div>   
         `;
         productCard.appendChild(productContainer);
@@ -51,10 +51,11 @@ function searchData(){
  }
   XHR.send()
 }
+
 /*search data by categories and price amd number slice */
 function searchCategory(){
   let selectedValue = document.getElementById("select-product").value.toLowerCase();
-  let selectedNumber = document.getElementById("page-number").value;
+  let selectedNumber = document.getElementById("page-number").value || 20;
   
   let productContainer = document.createElement("div");
   productContainer.classList.add("card");
@@ -81,6 +82,7 @@ function searchCategory(){
         <h3 class="product-des">${productName.category}</h3>
         <span class="original-price">$${productName.price}</span>
         <p>${productName.description}</p>
+        <a href="product.html?id=${productName.id}"><button class="card-submit-btn">Submit</button></a>
         </div>`;
           searchElement.appendChild(productContainer);
         }
@@ -96,12 +98,15 @@ function searchCategory(){
           productsContainer.classList.add("card");
           productsContainer.innerHTML += `
           <img src="${product.image}" alt="product Image">
-        <div class="product-info">
-        <h2 class="product-title">${product.title}</h2>
-        <h3 class="product-des">${product.category}</h3>
-        <span class="original-price">$${product.price}</span>
-        <p>${product.description}</p>
-        </div>`;
+          <div class="product-info">
+          <h2 class="product-title">${product.title}</h2>
+          <h3 class="product-des">${product.category}</h3>
+          <span class="original-price">$${product.price}</span>
+          <p>${product.description}</p>
+          <a href="product.html?id=${product.id}">
+          <button class="card-submit-btn">Submit</button>
+          </a>
+          </div>`;
           elementPrice.appendChild(productsContainer);
         }
         console.log(sortData)
@@ -122,6 +127,9 @@ function searchCategory(){
         <h3 class="product-des">${productPage.category}</h3>
         <span class="original-price">$${productPage.price}</span>
         <p>${productPage.description}</p>
+        <a href="product.html?id=${productPage.id}">
+          <button class="card-submit-btn">Submit</button>
+          </a>
         </div>`
         ;
         searchElement.appendChild(productPageContainer);
