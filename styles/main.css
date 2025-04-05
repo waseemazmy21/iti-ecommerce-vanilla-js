@@ -100,8 +100,9 @@ a {
 
 .page-title{
   display: inline;
+  text-align: center;
   color: var(--midnightblue-color);
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bold;
   padding: 20px;
 }
