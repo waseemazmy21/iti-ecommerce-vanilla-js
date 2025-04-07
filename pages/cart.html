@@ -31,43 +31,38 @@
         </div>
       </div>
     </header>
-    <!-- hero Section -->
-    <section>
-      <div class="hero-section">
-        <img
-          src="../images/image1-hero-section.PNG"
-          alt="lamp-photo"
-          class="hero-section-img1"
-        />
-        <div class="hero-section-component">
-          <p class="hero-section-component-p1">
-            Best Furniture For Your Castle....
-          </p>
-          <h1 class="hero-section-component-h1">
-            New Furniture Collection Trends in 2025
-          </h1>
-          <p class="hero-section-component-p2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-            eaque autem quasi eum explicabo provident consectetur dolorum, illo
-            corrupti molestias.
-          </p>
-          <button class="hero-section-shop-btn">Shop Now</button>
-        </div>
-        <img
-          src="../images/image2-hero-section.PNG"
-          alt="chair image"
-          class="hero-section-img2"
-        />
-      </div>
-    </section>
+
     <!-- cart body -->
     <section class="cart container">
-      <div class="cart-item">
-        <div class="cart-item-info"></div>
-        <div class="cart-item-price"></div>
-        <div class="cart-item-quantity"></div>
-        <div class="cart-item-total"></div>
+      <table id="cart-items" class="cart-items">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr>
+            <td>
+              <div class="cart-item-info">
+                <img src="" alt="" />
+                <div>
+                  <p class="name"></p>
+                  <p class="category"></p>
+                </div>
+              </div>
+            </td>
+            <td class="cart-item-price"></td>
+            <td class="cart-item-quantity"></td>
+            <td class="cart-item-total"></td>
+          </tr>
+        </tbody>
+      </table>
+     
       </div>
+      <div class="cart-summary"></div>
     </section>
 
     <!-- footer section -->
