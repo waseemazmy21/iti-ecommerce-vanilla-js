@@ -3,12 +3,17 @@
   /* Colors */
   --purple-color: #fb2e86;
   --violet-color: #7f32e0;
-  --lavender-color: #f7f5fe;
+  --lavender-color: #F2F0FF;
   --buttercup-color: #DE9135;
   --snow-color: #fffefe;
   --midnightblue-color: #101750;
   --clearday-color: #eaf4f2;
   --solitude-color: #f7f7fa;
+}
+/* Custom font*/
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
 }
 
 html,
@@ -17,7 +22,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans';
   background-color: var(--snow-color);
 }
 
@@ -36,73 +41,8 @@ a {
 /* Shared Component Styles */
 /* Header */
 
-.page {
+.app {
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
-.header {
-  display: flex;
-  flex: 0 0 5%;
-  background-color: var(--violet-color);
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-section{
-  display: inline;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.navbar {
-  display: flex;
-  flex: 0 0 10%;
-  background-color: var(--snow-color);
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.navbar h1 {
-  display: inline;
-  color: var(--midnightblue-color);
-  font-size: xx-large;
-  font-weight: bolder;
-  padding: 20px;
-}
-
-.top-section {
-  display: flex;
-  flex: 0 0 30%;
-  background-color: var(--lavender-color);
-  justify-content: center;
-  align-items: center;
-}
-
-.main-content {
-  display: flex;
-  flex: 1; /* Takes all remaining space */
-  background-color: lightgray; /* Just for visualization */
-  justify-content: center;
-  align-items: center;
-}
-
-.products-container {
-  width: 60%;
-  justify-content: center;
-  display: flex;
-  margin:auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  
-}
-
-.page-title{
-  display: inline;
-  text-align: center;
-  color: var(--midnightblue-color);
-  font-size: xx-large;
-  font-weight: bold;
-  padding: 20px;
 }

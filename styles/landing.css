@@ -1,0 +1,10 @@
+@import url("./main.css");
+
+
+h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: var(--midnightblue-color);
+    text-align: center;
+    margin: 25px;
+}
