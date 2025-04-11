@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/resets.css" />
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/mainproducts.css">
     <link rel="stylesheet" href="../styles/products.css">
-    <script src="../scripts/main.js" defer></script>
+    <!-- <script src="../scripts/main.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Shop Slider</title>
+    <link rel="icon" type="image/x-icon" href="../images/store-solid.svg">
+    <title>Hekto</title>
 </head>
 <body>
     <header>
-        <div class="nav-bar">
+        <nav class="nav-bar">
                 <a href="#" class="site-name"><p>Hekto</p></a>
             <div class="nav-bar-links">
                 <a href="#" class="home-page">Home</a>
@@ -23,7 +24,7 @@
                 <input type="text" placeholder="Search....." id="search-Data"/>
                 <span class="search-bar-icon" onclick="searchData()"><i class="fas fa-search"></i></span>
             </div>
-        </div>
+        </nav>
     </header>
     <!-- hero Section -->
     <section>
@@ -38,6 +39,7 @@
                 <img src="../images/image2-hero-section.PNG" alt="chair image" class="hero-section-img2">
             </div>
     </section>
+    <main>
     <!-- section body -->
     <section class="body-section" id="Body">
         <div class="body-section-div1">
@@ -58,9 +60,10 @@
     <section class="section-products">
         <aside class="side-bar-filter">
                 <div class="body-section-side-bar">
-                    <h2>Min. & Max. Price</h2>
-                    <label><input type="checkbox"/>Min. Price</label>
-                    <label><input type="checkbox"/>Max. Price</label>
+                    <h2>Price Filtering</h2>
+                    <label>Please Enter your Desired Price: </label>
+                    <input type="text" id="Price" name="price" class="search-input"/>
+                    <button onclick="filterPrice()" class="fiter-btn">Filter</button>
                 </div>
             </aside>
             <section class="products" >
@@ -68,10 +71,12 @@
             </section>
                 
     </section>
+</main>
     <!-- footer section -->
      <footer>
 
-     </footer>
-     <script src="../scripts/products.js"></script>
+    </footer>
+    
+    <script src="../scripts/products.js"></script>
 </body>
 </html>

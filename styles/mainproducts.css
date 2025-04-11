@@ -40,7 +40,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 100%; */
+  position: fixed;
+  width: 100%;
 }
 /* nav-bar => site name*/
 .nav-bar {
@@ -126,7 +127,7 @@ header {
 }
 .hero-section-img1 {
   width: 150px;
-  padding-bottom: 200px;
+  padding-top: 1%;
 }
 .hero-section-component {
   display: flex;
@@ -169,4 +170,5 @@ header {
 }
 .hero-section-img2 {
   width: 400px;
+  padding-top: 5%;
 }

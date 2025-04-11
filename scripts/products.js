@@ -1,14 +1,14 @@
-let URL = "https://fakestoreapi.com/products";
+let ApiURL = "https://fakestoreapi.com/products";
 let XHR = new XMLHttpRequest();
 
 function getData(Data){
-    XHR.open("get", URL, true)
+    XHR.open("get", ApiURL, true)
     XHR.onload = function(){
         if (XHR.status == 200){
             let res = XHR.response;
             let resObj = JSON.parse(res)
             Data(resObj)
-      console.log(resObj);
+      // console.log(resObj);
     }
   };
   XHR.send();
@@ -26,8 +26,9 @@ function printData(){
         <h2 class="product-title">${item.title}</h2>
         <h3 class="product-des">${item.category}</h3>
         <span class="original-price">$${item.price}</span>
-        <p>${item.description}</p>
-        <a href="product.html?id=${item.id}"><button class="card-submit-btn">Submit</button></a>
+        <p>Rate: ⭐${item.rating.rate}</p>
+        <p>Number of reviews: (${item.rating.count}) review</p>
+        <a href="product.html?id=${item.id}"><button class="card-submit-btn">Show more</button></a>
         </div>   
         `;
         productCard.appendChild(productContainer);
@@ -37,8 +38,9 @@ function printData(){
 printData()
 /* search Data function*/ 
 function searchData(){
- let searchBar = document.getElementById("search-Data").value.toLowerCase();
- XHR.open("get", URL, true)
+ let searchBar = document.getElementById("search-Data").value.trim().toLowerCase();
+ XHR = new XMLHttpRequest();
+ XHR.open("get", ApiURL, true)
  XHR.onreadystatechange = function(){
   if (XHR.readyState == 4 && XHR.status == 200){
     let result = XHR.response;
@@ -46,6 +48,25 @@ function searchData(){
     let filterData = objectResult.filter(product => 
       product.title.toLowerCase().includes(searchBar)
     );
+    let searchElement = document.querySelector(".products");
+    searchElement.innerHTML = "";
+    for (product of filterData){
+      let productContainer = document.createElement("div");
+      productContainer.classList.add("card");
+      productContainer.innerHTML = `
+      <img src="${product.image}" alt="product Image">
+        <div class="product-info">
+        <h2 class="product-title">${product.title}</h2>
+        <h3 class="product-des">${product.category}</h3>
+        <span class="original-price">$${product.price}</span>
+        <p>${product.description}</p>
+        <p>Rate: ⭐${product.rating.rate} </p>
+        <p>Number of reviews: (${product.rating.count}) review</p>
+        <a href="product.html?id=${product.id}"><button class="card-submit-btn">Learn More</button></a>
+        </div>
+      `;
+      searchElement.appendChild(productContainer);
+    }
     console.log(filterData) 
   }
  }
@@ -61,7 +82,7 @@ function searchCategory(){
   productContainer.classList.add("card");
   let XHR = new XMLHttpRequest();
 
-  XHR.open("get", URL, true);
+  XHR.open("get", ApiURL, true);
   XHR.onreadystatechange = function(){
     if (XHR.readyState == 4 && XHR.status == 200){
       let result = XHR.response;
@@ -75,14 +96,16 @@ function searchCategory(){
         for(productName of sortData){
           let productContainer = document.createElement("div");
           productContainer.classList.add("card");
-          productContainer.innerHTML += `
+          productContainer.innerHTML = `
           <img src="${productName.image}" alt="product Image">
         <div class="product-info">
         <h2 class="product-title">${productName.title}</h2>
         <h3 class="product-des">${productName.category}</h3>
         <span class="original-price">$${productName.price}</span>
         <p>${productName.description}</p>
-        <a href="product.html?id=${productName.id}"><button class="card-submit-btn">Submit</button></a>
+        <p>Rate: ⭐${productName.rating.rate}</p>
+        <p>Number of reviews: (${productName.rating.count}) review</p>
+        <a href="product.html?id=${productName.id}"><button class="card-submit-btn">Learn More</button></a>
         </div>`;
           searchElement.appendChild(productContainer);
         }
@@ -96,15 +119,17 @@ function searchCategory(){
         for (product of sortData){
           let productsContainer = document.createElement("div")
           productsContainer.classList.add("card");
-          productsContainer.innerHTML += `
+          productsContainer.innerHTML = `
           <img src="${product.image}" alt="product Image">
           <div class="product-info">
           <h2 class="product-title">${product.title}</h2>
           <h3 class="product-des">${product.category}</h3>
           <span class="original-price">$${product.price}</span>
           <p>${product.description}</p>
+          <p>Rate: ⭐${product.rating.rate}</p>
+          <p>Available products: ${product.rating.count}</p>
           <a href="product.html?id=${product.id}">
-          <button class="card-submit-btn">Submit</button>
+          <button class="card-submit-btn">Learn More</button>
           </a>
           </div>`;
           elementPrice.appendChild(productsContainer);
@@ -127,8 +152,10 @@ function searchCategory(){
         <h3 class="product-des">${productPage.category}</h3>
         <span class="original-price">$${productPage.price}</span>
         <p>${productPage.description}</p>
+        <p>Rate: ⭐${productPage.rating.rate}</p>
+        <p>Available products: (${productPage.rating.count}) review</p>
         <a href="product.html?id=${productPage.id}">
-          <button class="card-submit-btn">Submit</button>
+          <button class="card-submit-btn">Learn More</button>
           </a>
         </div>`
         ;
@@ -139,4 +166,47 @@ function searchCategory(){
   }
   XHR.send()
 }
+/*The max and min price checkbox */
+function filterPrice(){
+  let searchElement = document.querySelector(".products");
+  let EnterPrice = Number(document.getElementById("Price").value)
+  let XHR = new XMLHttpRequest();
+  XHR.open("get", ApiURL, true);
+  XHR.onreadystatechange = function(){
+    if(XHR.readyState == 4 && XHR.status == 200){
+      let PriceResult = XHR.response;
+      let PriceResultObj = JSON.parse(PriceResult);
+      searchElement.innerHTML = "";
 
+      for (products of PriceResultObj){
+        let productPrice = Number(products.price)
+        switch(true){
+          case(productPrice >= EnterPrice - 2 && productPrice <= EnterPrice + 2):
+          let productContainer = document.createElement("div");
+          productContainer.classList.add("card");
+          productContainer.innerHTML = `
+            <img src="${products.image}" alt="product Image">
+        <div class="product-info">
+        <h2 class="product-title">${products.title}</h2>
+        <h3 class="product-des">${products.category}</h3>
+        <span class="original-price">$${products.price}</span>
+        <p>${products.description}</p>
+        <p>Rate: ⭐${products.rating.rate}</p>
+        <p>Available products: (${products.rating.count}) review</p>
+        <a href="product.html?id=${products.id}">
+          <button class="card-submit-btn">Learn More</button>
+          </a>
+        </div>
+          `;
+          searchElement.appendChild(productContainer);
+          break;
+        }
+      }
+      if(searchElement.innerHTML == ""){
+        searchElement.innerHTML = `<p>No products Found Under this Price</p>`
+      }
+      
+    }
+  }
+XHR.send()
+}
