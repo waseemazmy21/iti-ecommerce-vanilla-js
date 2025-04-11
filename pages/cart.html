@@ -10,27 +10,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="../styles/cart.css" />
+    <link rel="stylesheet" href="../styles/component-styles/header.css" />
+    <link rel="stylesheet" href="../styles/component-styles/navbar.css" />
     <title>Cart</title>
-
-    <script src="../scripts/cart.js" defer></script>
   </head>
-  <body>
-    <header>
-      <div class="nav-bar">
-        <a href="#" class="site-name"><p>Hekto</p></a>
-        <div class="nav-bar-links">
-          <a href="#" class="home-page">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Login</a>
-        </div>
-        <div class="search-bar">
-          <input type="text" placeholder="Search....." id="search-Data" />
-          <span class="search-bar-icon" onclick="searchData()"
-            ><i class="fas fa-search"></i
-          ></span>
-        </div>
-      </div>
-    </header>
+  <body class="landing">
+    <header id="header"></header>
+    <nav id="navbar"></nav>
 
     <!-- cart body -->
     <section class="cart container">
@@ -70,5 +56,9 @@
 
     <!-- footer section -->
     <footer></footer>
+
+    <script type="module" src="../scripts/ui-components/header.js"></script>
+    <script type="module" src="../scripts/ui-components/navbar.js"></script>
+    <script src="../scripts/cart.js" defer></script>
   </body>
 </html>

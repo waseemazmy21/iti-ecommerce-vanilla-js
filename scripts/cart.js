@@ -164,8 +164,3 @@ function checkout() {
 
 const checkoutButton = document.getElementById("checkout");
 checkoutButton.addEventListener("click", checkout);
-
-// test
-addToCart(product);
-addToCart(product);
-addToCart({ ...product, id: 2 });
