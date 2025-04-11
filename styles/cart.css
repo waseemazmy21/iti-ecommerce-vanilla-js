@@ -11,51 +11,41 @@
   }
 }
 
-/* Style the table */
-#cart-items {
-  width: 100%;
-  border-collapse: collapse;
-  flex-grow: 1; /* From .cart-items */
+.cart-items {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
+  flex-grow: 1;
+  flex-basis: 75%;
 }
 
-/* Headers (thead th) */
-#cart-items thead tr {
-  /* Mimic .headers grid layout without breaking table */
-  display: table-row; /* Keep table behavior */
+.cart-item-divider {
+  grid-column: -1/1;
+  border-bottom: 1px solid #e1e1e4;
 }
 
-#cart-items th {
-  font-size: 1.5rem; /* From .headers h2 */
-  font-weight: 600;
+.headers {
+  display: contents;
+}
+
+.headers h2 {
+  font-size: 1.5rem;
   color: #1d3178;
-  padding: 1rem; /* Consistent with .cart-item */
-  border-bottom: 2px solid #e1e1e4; /* From .cart-item */
-  text-align: center; /* Default alignment */
+  padding-bottom: 1rem;
 }
 
-#cart-items th:first-child {
-  text-align: left; /* Align "Product" left like .cart-item-info */
-}
-
-/* Cart items (tbody tr) */
 .cart-item {
-  display: table-row; /* Keep table behavior instead of grid */
-  /* Grid properties won't apply directly, but we'll mimic spacing */
-}
-
-/* Table cells (td) */
-.cart-item td {
-  padding: 1rem; /* From .cart-item */
-  border-bottom: 2px solid #e1e1e4; /* From .cart-item */
-  vertical-align: middle; /* Replace align-items: center */
-  text-align: center; /* Default for price, quantity, total */
+  display: contents;
+  padding: 1rem;
+  border-bottom: 2px solid #e1e1e4;
 }
 
 .cart-item-info {
   display: flex;
   gap: 1rem;
   align-items: center;
-  text-align: left; /* Left-align product info */
 }
 
 .cart-item img {
@@ -74,17 +64,58 @@
   color: #a1a8c1;
 }
 
+/* Cart Summary */
 .cart-summary {
-  flex-grow: 1; /* Ensure summary takes space in flex layout */
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Optional: Mimic grid column widths with min-width if desired */
-#cart-items th:first-child,
-.cart-item-info {
-  min-width: 200px; /* Approximate 2fr for "Product" */
+.cart-summary > div {
+  background-color: #f4f4fc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#cart-items th:not(:first-child),
-.cart-item td:not(.cart-item-info) {
-  min-width: 100px; /* Approximate 1fr for others */
+.cart-summary h3 {
+  font-size: 1.5rem;
+  color: #1d3178;
+}
+
+.cart-summary .address input {
+  padding-block: 0.5rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e1e1e4;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.cart-summary .address input:focus {
+  border-bottom: 1px solid #1d3178;
+}
+
+.cart-summary .price div {
+  display: flex;
+  justify-content: space-between;
+  color: #1d3178;
+}
+
+.cart-summary button {
+  background-color: #1d3178;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-summary button:hover {
+  background-color: #1d3178;
+  opacity: 0.9;
 }

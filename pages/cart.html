@@ -34,35 +34,38 @@
 
     <!-- cart body -->
     <section class="cart container">
-      <table id="cart-items" class="cart-items">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-          <tr>
-            <td>
-              <div class="cart-item-info">
-                <img src="" alt="" />
-                <div>
-                  <p class="name"></p>
-                  <p class="category"></p>
-                </div>
-              </div>
-            </td>
-            <td class="cart-item-price"></td>
-            <td class="cart-item-quantity"></td>
-            <td class="cart-item-total"></td>
-          </tr>
-        </tbody>
-      </table>
-     
+      <div id="cart-items" class="cart-items">
+        <div class="headers">
+          <h2>Product</h2>
+          <h2>Price</h2>
+          <h2>Quantity</h2>
+          <h2>Total</h2>
+        </div>
       </div>
-      <div class="cart-summary"></div>
+
+      <div class="cart-summary">
+        <div class="address">
+          <h3>Address</h3>
+          <input type="text" placeholder="Enter your address" id="address" />
+          <input type="text" placeholder="Enter your city" id="city" />
+        </div>
+        <div class="price">
+          <h3>Cart Summary</h3>
+          <div>
+            <p>Subtotal</p>
+            <p id="subtotal">0.00</p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p id="shipping">$5.00</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p id="total">0.00</p>
+          </div>
+          <button id="checkout">Checkout</button>
+        </div>
+      </div>
     </section>
 
     <!-- footer section -->
