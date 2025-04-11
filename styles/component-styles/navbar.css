@@ -1,0 +1,55 @@
+@import url("../main.css");
+
+.navbar {
+    height: 78px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    background-color: var(--snow-color);
+}
+.navbar  h1 {
+    display: inline-block;
+    color: var(--midnightblue-color);
+    font-size: xx-large;
+    font-weight: bold;
+    margin: auto;
+}
+
+.navbar ul {
+    margin: auto;
+    display: inline-block;
+
+}
+
+.navbar li {
+    display: inline;
+    vertical-align:middle;
+}
+
+.navbar a {
+    color: var(--midnightblue-color);
+
+}
+.navbar a:hover {
+color: var(--purple-color);
+}
+
+.left-section {
+    display: flex;
+    float: left;
+    width: 60%;
+}
+
+.navbar input {
+    margin-left: 15%;
+    height: 25px;
+}
+
+.navbar button {
+    background-color: var(--purple-color);
+    color: var(--snow-color);
+    font-weight: bold;
+    border: none;
+    height: 25px;
+
+}
