@@ -1,0 +1,61 @@
+@import url("../main.css");
+
+.hero {
+    height: 764px;
+    width: 100%;
+    background-color: var(--lavender-color);
+}
+
+.hero .left-img {
+    margin-top: 0;
+    padding-top: 0;
+    object-fit: none;
+    float: left;
+}
+
+.middle-section {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+.middle-section h5 {
+    margin-top: 15%;
+    color: var(--purple-color);
+}
+
+.middle-section h1 {
+    width: 600px;
+    font-size: 50px;
+    font-weight: bolder;
+    word-wrap: break-word;
+}
+
+.middle-section p {
+    width: 600px;
+    word-wrap: break-word;
+    color: darkgray;
+}
+
+.middle-section button {
+    width: 163px;
+    height: 50px;
+    border-style: none;
+    background-color: var(--purple-color);
+    color: var(--snow-color);
+    font-weight: bold;
+    margin-bottom: 25%;
+}
+
+.middle-section button:hover{
+    background-color: var(--snow-color);
+    color: var(--purple-color);
+    border-style: solid;
+    border-color: var(--purple-color);
+}
+
+.hero .right-img {
+    width: 629px;
+    object-fit: none;
+}
