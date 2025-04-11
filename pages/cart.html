@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/resets.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <title>Cart</title>
+
+    <script src="../scripts/cart.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <a href="#" class="site-name"><p>Hekto</p></a>
+        <div class="nav-bar-links">
+          <a href="#" class="home-page">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Login</a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search....." id="search-Data" />
+          <span class="search-bar-icon" onclick="searchData()"
+            ><i class="fas fa-search"></i
+          ></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- cart body -->
+    <section class="cart container">
+      <div id="cart-items" class="cart-items">
+        <div class="headers">
+          <h2>Product</h2>
+          <h2>Price</h2>
+          <h2>Quantity</h2>
+          <h2>Total</h2>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <div class="address">
+          <h3>Address</h3>
+          <input type="text" placeholder="Enter your address" id="address" />
+          <input type="text" placeholder="Enter your city" id="city" />
+        </div>
+        <div class="price">
+          <h3>Cart Summary</h3>
+          <div>
+            <p>Subtotal</p>
+            <p id="subtotal">0.00</p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p id="shipping">$5.00</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p id="total">0.00</p>
+          </div>
+          <button id="checkout">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+    <footer></footer>
+  </body>
+</html>
