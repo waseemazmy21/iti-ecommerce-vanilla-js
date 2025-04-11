@@ -1,5 +1,5 @@
 import { createElement, createProductCard } from "./ui.js";
-import { getProductById, getProducts } from "./api.js"
+import { getProductById, getProducts } from "../api.js"
 
 const products_container = document.getElementById("products-container");
 products_container.setAttribute("class", "products-container");

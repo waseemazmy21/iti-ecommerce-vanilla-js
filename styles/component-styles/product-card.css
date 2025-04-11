@@ -1,4 +1,4 @@
-@import url("./main.css");
+@import url(".././main.css");
 
 .products-container {
     width: 60%;
@@ -20,12 +20,14 @@
     position: relative;
 }
 
-.card img:hover{
+.card:hover img{
     box-shadow: 0 4px 15px 0 var(--violet-color);
+    
 
 }
-.card img:hover ~ .cart-button {
+.card:hover > .cart-button {
     display:inline-block;
+    
 }
 
 .cart-button {
@@ -33,7 +35,7 @@
     position:absolute;
     top: 150px;
     right: 150px;
-    z-index: 3; 
+    z-index: 1; 
     font-size: small;
     border-radius: 50%;
     background-color: var(--solitude-color);   

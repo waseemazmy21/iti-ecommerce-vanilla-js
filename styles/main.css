@@ -38,10 +38,8 @@ a {
   margin: 0 auto;
 }
 
-/* Shared Component Styles */
-/* Header */
 
-.app {
+.landing {
   height: 100vh;
   display: flex;
   flex-direction: column;
