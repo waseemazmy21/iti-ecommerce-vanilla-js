@@ -2,26 +2,35 @@
 :root {
   /* Colors */
   --purple-color: #fb2e86;
-  --serchBar: #fb2e86;
-  --heroSection: #f6f5ff;
-  --shop-slider-header: #fff;
-  --hero-section: #f8f5ff;
-  --hero-section-primary-color: #ff007f;
-  --hero-section-text-color: #222;
-  --text-main: #151875;
-  --text--prmary: #b0b0b5;
-  --text-label: #3f509e;
-  --text-input: #e7e6ef;
-  --text--side-bar: #7e81a2;
-  --product-title: #111c85;
-  --discount-price: #ff2aaa;
+  --violet-color: #7f32e0;
+  --lavender-color: #f2f0ff;
+  --buttercup-color: #de9135;
+  --snow-color: #fffefe;
+  --midnightblue-color: #101750;
+  --clearday-color: #eaf4f2;
+  --solitude-color: #f7f7fa;
+}
+/* Custom font*/
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("../assets/fonts/JosefinSans-VariableFont_wght.ttf")
+    format("truetype");
 }
 
 html,
 body {
   width: 100%;
   height: 100vh;
-  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans";
+  background-color: var(--snow-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--snow-color);
+  padding: 10px;
 }
 
 /* Utility Classes */
@@ -40,8 +49,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  width: 100%;
+  /* width: 100%; */
 }
 /* nav-bar => site name*/
 .nav-bar {
@@ -127,7 +135,7 @@ header {
 }
 .hero-section-img1 {
   width: 150px;
-  padding-top: 1%;
+  padding-bottom: 200px;
 }
 .hero-section-component {
   display: flex;
@@ -170,5 +178,4 @@ header {
 }
 .hero-section-img2 {
   width: 400px;
-  padding-top: 5%;
 }
