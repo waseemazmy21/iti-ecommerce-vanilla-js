@@ -77,16 +77,7 @@ function displayProductDetails(product) {
   const btnText = document.createTextNode("Add to card");
   addBTN.appendChild(btnText);
   addBTN.onclick = function () {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-    const existingProduct = cart.find((item) => item.product.id === product.id);
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      cart.push({ product, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
+    addToCart(product);
     alert("Product added to card");
   };
   textContent.appendChild(addBTN);
@@ -96,10 +87,15 @@ function getDiscount(mainPrice, discount) {
   return mainPrice - (discount / 100) * mainPrice;
 }
 
-let addProductToLocalStorage = function (productID) {
-  if (!myProductsId.includes(productID)) {
-    myProductsId.push(productID);
-    localStorage.productsChoise = JSON.stringify(myProductsId);
-    added = true;
+function addToCart(product) {
+  const cart = localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
+  const existingProduct = cart.find((item) => item.product.id === product.id);
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({ product, quantity: 1 });
   }
-};
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
