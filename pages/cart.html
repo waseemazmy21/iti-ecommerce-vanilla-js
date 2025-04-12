@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/resets.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <link rel="stylesheet" href="../styles/component-styles/header.css" />
+    <link rel="stylesheet" href="../styles/component-styles/navbar.css" />
+    <title>Cart</title>
+  </head>
+  <body class="landing">
+    <header id="header"></header>
+    <nav id="navbar"></nav>
+
+    <!-- cart body -->
+    <section class="cart container">
+      <div id="cart-items" class="cart-items">
+        <div class="headers">
+          <h2>Product</h2>
+          <h2>Price</h2>
+          <h2>Quantity</h2>
+          <h2>Total</h2>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <div class="address">
+          <h3>Address</h3>
+          <input type="text" placeholder="Enter your address" id="address" />
+          <input type="text" placeholder="Enter your city" id="city" />
+        </div>
+        <div class="price">
+          <h3>Cart Summary</h3>
+          <div>
+            <p>Subtotal</p>
+            <p id="subtotal">0.00</p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p id="shipping">$5.00</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p id="total">0.00</p>
+          </div>
+          <button id="checkout">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+    <footer></footer>
+
+    <script type="module" src="../scripts/ui-components/header.js"></script>
+    <script type="module" src="../scripts/ui-components/navbar.js"></script>
+    <script src="../scripts/cart.js" defer></script>
+  </body>
+</html>
