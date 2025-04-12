@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
@@ -106,7 +107,7 @@
 }
 
 .cart-summary button {
-  background-color: #1d3178;
+  background-color: #fb2e86;
   color: white;
   padding: 1rem;
   border-radius: 8px;
@@ -116,6 +117,15 @@
 }
 
 .cart-summary button:hover {
-  background-color: #1d3178;
+  background-color: #fff;
+  color: #fb2e86;
   opacity: 0.9;
+}
+
+div.empty-cart-message {
+  font-size: 1.5rem;
+  color: #1d3178;
+  text-align: center;
+  margin-top: 4rem;
+  grid-column: 1/-1;
 }

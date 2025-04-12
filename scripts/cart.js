@@ -106,6 +106,10 @@ function renderCart() {
   const existingItems = cartContainer.querySelectorAll(".cart-item");
   existingItems.forEach((item) => item.remove());
 
+  // remove dividers
+  const dividers = cartContainer.querySelectorAll(".cart-item-divider");
+  dividers.forEach((divider) => divider.remove());
+
   cart.forEach((item) => {
     const cartItemElement = createCartItem(item);
     const divider = document.createElement("div");
@@ -116,10 +120,8 @@ function renderCart() {
 
   if (cart.length === 0) {
     const emptyMessage = document.createElement("div");
-    emptyMessage.style.gridColumn = "1 / -1"; // Span all columns
+    emptyMessage.classList.add("empty-cart-message");
     emptyMessage.textContent = "Your cart is empty.";
-    emptyMessage.style.padding = "1rem";
-    emptyMessage.style.textAlign = "center";
     cartContainer.appendChild(emptyMessage);
   }
 }
