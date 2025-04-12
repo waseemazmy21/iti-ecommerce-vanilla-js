@@ -1,0 +1,97 @@
+@import url(".././main.css");
+
+.products-container {
+  width: 60%;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.card {
+  width: 200px;
+  height: 323px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+
+.card:hover img {
+  box-shadow: 0 4px 15px 0 var(--violet-color);
+}
+.card:hover > .cart-button {
+  display: inline-block;
+}
+
+.cart-button {
+  display: none;
+  position: absolute;
+  top: 150px;
+  right: 150px;
+  z-index: 1;
+  font-size: small;
+  border-radius: 50%;
+  background-color: var(--solitude-color);
+  box-shadow: 0 1px 3px 0 var(--violet-color);
+  cursor: pointer;
+}
+.card h5 {
+  font-size: medium;
+  color: var(--midnightblue-color);
+  font-weight: bold;
+}
+
+.card img {
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+}
+
+.circle-container {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+.circle {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.buttercup {
+  background-color: var(--buttercup-color);
+}
+
+.purple {
+  background-color: var(--purple-color);
+}
+
+.violet {
+  background-color: var(--violet-color);
+}
+
+.prices {
+  display: flex;
+  justify-content: space-evenly;
+  height: 25px;
+}
+.price {
+  color: var(--midnightblue-color);
+  font-weight: bold;
+  display: inline;
+}
+
+.original-price {
+  color: var(--purple-color);
+  text-decoration: line-through;
+}
