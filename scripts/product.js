@@ -1,22 +1,38 @@
 const productPage = document.getElementById("Product-page")
 const productDetails = productPage.querySelector(".details")
 
-const Discount = 10         // Temp variable for test
-const price = 32            // Temp variable for test
-let added = false           // Temp variable for test
+// const Discount = 10         // Temp variable for test
 
+let myProductsId = [];
 
-const getQueryParams = _ => {
-    const params = new URLSearchParams(window.location.search)
-
-    return {
-        category: params.get("category"),
-        name: params.get("name")
-    }
+if (localStorage.productsChoise) {
+    myProductsId = JSON.parse(localStorage.productsChoise)
 }
 
-const { category: categoryName, name: productName } = getQueryParams()
+function getQueryParams() {
+    const params = new URLSearchParams(window.location.search)
 
+    return params.get("id")
+}
+
+let added = myProductsId.includes(+ getQueryParams());
+
+(function () {
+    let createReq = new XMLHttpRequest()
+
+    createReq.open("GET", "https://fakestoreapi.com/products/" + getQueryParams())
+    createReq.responseType = "json"
+
+    createReq.onloadend = function () {
+        if (createReq.readyState == 4 && createReq.status == 200) {
+            console.log(createReq.response);
+            displayProductDetails(createReq.response)
+            
+        }
+        
+    }
+    createReq.send()
+})();
 
 
 function displayProductDetails(product) {
@@ -25,7 +41,7 @@ function displayProductDetails(product) {
     productDetails.appendChild(imgDiv)
 
     const image = document.createElement("img")
-    image.setAttribute("src", `../images/bag.jpg`)
+    image.setAttribute("src", `${product.image}`)
     imgDiv.appendChild(image)
 
 
@@ -34,18 +50,18 @@ function displayProductDetails(product) {
     productDetails.appendChild(textContent)
 
     const prod_name = document.createElement("h2")
-    const textPName = document.createTextNode(`Product Name`)
+    const textPName = document.createTextNode(`${product.title}`)
     prod_name.appendChild(textPName)
     textContent.appendChild(prod_name)
 
     const salary = document.createElement("div")
     salary.setAttribute("class", "salary")
-    salary.innerHTML = `${Discount > 0 ? `<span>$${getDiscount(price, Discount)}</span> <del>$${price}</del>` : `<span>$${price}</span>`}`
+    salary.innerHTML = `${Discount > 0 ? `<span>$${getDiscount(product.price, Discount)}</span> <del>$${product.price}</del>` : `<span>$${product.price}</span>`}`
     textContent.appendChild(salary)
 
     const descriptionElement = document.createElement("p")
     descriptionElement.setAttribute("class", "secondary-text")
-    const descriptionText = document.createTextNode(`Lorem ipsum dolor sit, amet consectetur adipisicing elit eos ipsam sint, nesciunt debitis. Quas. `)
+    const descriptionText = document.createTextNode(`${product.description}`)
     descriptionElement.appendChild(descriptionText)
     textContent.appendChild(descriptionElement)
 
@@ -56,7 +72,7 @@ function displayProductDetails(product) {
     const btnText = document.createTextNode(added ? "Added" : "Add to card")
     addBTN.appendChild(btnText)
     addBTN.onclick = function () {
-        added = !added
+        addProductToLocalStorage(product.id)
         addBTN.setAttribute("class", !added ? "btn" : '')
         addBTN.innerHTML = added ? "Added" : "Add to card"
     }
@@ -67,4 +83,11 @@ function getDiscount(mainPrice, discount) {
     return (mainPrice - (discount / 100) * mainPrice)
 }
 
-displayProductDetails()
+let addProductToLocalStorage = function (productID) {
+    if (!myProductsId.includes(productID)) {
+        myProductsId.push(productID)
+        localStorage.productsChoise = JSON.stringify(myProductsId)
+        added = true
+    }
+
+}
