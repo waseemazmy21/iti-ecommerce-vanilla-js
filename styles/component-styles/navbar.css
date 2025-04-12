@@ -6,6 +6,9 @@
   margin-right: 10%;
   padding: 10px;
   background-color: var(--snow-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .navbar h1 {
   display: inline-block;
@@ -34,7 +37,7 @@
 
 .left-section {
   display: flex;
-  float: left;
+  /* float: left; */
   width: 60%;
 }
 
@@ -50,11 +53,10 @@
   color: var(--snow-color);
   font-weight: bold;
   border: none;
-  height: 25px;
   cursor: pointer;
   border-radius: 0.5rem;
-  border: 4px solid var(--purple-color);
-  transition: background-color 0.8s, color 0.8s, border-color 0.8s;
+  transition: background-color 0.8s, color 0.8s;
+  padding: 0.5rem 1rem !important;
 }
 
 .navbar button:hover {
