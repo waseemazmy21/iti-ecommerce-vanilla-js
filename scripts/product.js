@@ -15,7 +15,7 @@ function getQueryParams() {
   return params.get("id");
 }
 
-let added = myProductsId.includes(+getQueryParams());
+// let added = myProductsId.includes(+getQueryParams());
 
 (function () {
   let createReq = new XMLHttpRequest();
@@ -73,13 +73,21 @@ function displayProductDetails(product) {
   textContent.appendChild(descriptionElement);
 
   const addBTN = document.createElement("button");
-  addBTN.setAttribute("class", !added ? "btn" : "");
-  const btnText = document.createTextNode(added ? "Added" : "Add to card");
+  addBTN.setAttribute("class", "btn button");
+  const btnText = document.createTextNode("Add to card");
   addBTN.appendChild(btnText);
   addBTN.onclick = function () {
-    addProductToLocalStorage(product.id);
-    addBTN.setAttribute("class", !added ? "btn" : "");
-    addBTN.innerHTML = added ? "Added" : "Add to card";
+    const cart = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+    const existingProduct = cart.find((item) => item.product.id === product.id);
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.push({ product, quantity: 1 });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to card");
   };
   textContent.appendChild(addBTN);
 }

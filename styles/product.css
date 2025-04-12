@@ -108,7 +108,7 @@ h4 {
   }
 }
 
-button {
+.button {
   max-width: 100%;
   font-size: 1.1rem;
   display: block;
