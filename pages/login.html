@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Account - Hekto</title>
-    <link rel="stylesheet" href="login&signup.css">
-    <script src="login&signup.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/login&signup.css" />
+    <script src="../scripts/login&signup.js" defer></script>
+  </head>
+  <body>
     <header>
-        <div class="top-bar">
-            <span>zyad.890@gmail.com</span>
-            <span>|</span>
-            <span>(+123) 456 7890</span>
-        </div>
+      <div class="top-bar">
+        <span>zyad.890@gmail.com</span>
+        <span>|</span>
+        <span>(+123) 456 7890</span>
+      </div>
     </header>
-    
+
     <div class="navbar">
-        <div class="logo">Hekto</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button>🔍</button>
-        </div>
+      <div class="logo">Hekto</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button>🔍</button>
+      </div>
     </div>
 
     <main>
-        <section class="account-section">
-            <h2>My Account</h2>
-            <p class="breadcrumb">Home > Pages > My Account</p>
-            <div class="login-box">
-                <form id="loginForm">
-                    <h3>Login</h3>
-                    <p>Please login using account details below.</p>
-                    <input type="email" id="email" placeholder="Email Address" required>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <p>Forgot your password?</p>
-                    <button type="submit">Sign In</button>
-                    <p>Don't have an Account? <a href="#">Create account</a></p>
-                </form>
-            </div>
-        </section>
+      <section class="account-section">
+        <h2>My Account</h2>
+        <p class="breadcrumb">Home > Pages > My Account</p>
+        <div class="login-box">
+          <form id="loginForm">
+            <h3>Login</h3>
+            <p>Please login using account details below.</p>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <p>Forgot your password?</p>
+            <button type="submit">Sign In</button>
+            <p>
+              Don't have an Account? <a href="sign up.html">Create account</a>
+            </p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Hekto - All Rights Reserved</p>
+      <p>&copy; 2025 Hekto - All Rights Reserved</p>
     </footer>
-</body>
+  </body>
 </html>
-
-
