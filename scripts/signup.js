@@ -1,6 +1,6 @@
 /*sign up*/
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
     const form = document.getElementById("signupForm");
 
     form.addEventListener("submit", function (e) {
@@ -55,4 +55,4 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Account created successfully!");
         form.submit(); 
     });
-});
+})();

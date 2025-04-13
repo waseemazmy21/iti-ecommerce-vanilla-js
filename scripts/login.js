@@ -1,6 +1,6 @@
 /*login*/
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
     const form = document.getElementById("loginForm");
 
     form.addEventListener("submit", function (e) {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Login successful!");
         form.submit();
     });
-});
+})();
 
 
 
