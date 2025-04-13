@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/resets.css" />
+    <link rel="stylesheet" href="../styles/mainproducts.css">
+    <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../images/store-solid.svg">
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="9hmWZO4DZth6Vee0SnToD";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <link rel="stylesheet" href="../styles/component-styles/header.css" />
+    <link rel="stylesheet" href="../styles/component-styles/navbar.css" />
+    <title>Hekto</title>
+  </head>
+  <body class="landing">
+    <header id="header"></header>
+    <navbar id="navbar"> </navbar>
+    <!-- hero Section -->
+    <section>
+      <div class="hero-section">
+        <img
+          src="../images/image1-hero-section.PNG"
+          alt="lamp-photo"
+          class="hero-section-img1"
+        />
+        <div class="hero-section-component">
+          <p class="hero-section-component-p1">
+            Best Furniture For Your Castle....
+          </p>
+          <h1 class="hero-section-component-h1">
+            New Furniture Collection Trends in 2025
+          </h1>
+          <p class="hero-section-component-p2">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
+            eaque autem quasi eum explicabo provident consectetur dolorum, illo
+            corrupti molestias.
+          </p>
+          <a href="#Body"
+            ><button class="hero-section-shop-btn">Shop Now</button></a
+          >
+        </div>
+        <img
+          src="../images/image2-hero-section.PNG"
+          alt="chair image"
+          class="hero-section-img2"
+        />
+      </div>
+    </section>
+    <main>
+      <!-- section body -->
+      <section class="body-section" id="Body">
+        <div class="body-section-div1">
+          <h1>Eccommence Accessories & Fashion Iteams</h1>
+          <p>About 9,620 results(0.62 seconds)</p>
+        </div>
+        <div class="body-section-div2">
+          <label>Per Page: </label>
+          <input type="number" id="page-number" onchange="searchCategory()" />
+          <label>Sort By: </label>
+          <select
+            name="items"
+            placeholder="Best Match"
+            id="select-product"
+            onchange="searchCategory()"
+          >
+            <option value="">Select an option</option>
+            <option value="category">category</option>
+            <option value="Price">Price</option>
+          </select>
+        </div>
+      </section>
+      <section class="section-products">
+        <aside class="side-bar-filter">
+          <div class="body-section-side-bar">
+            <h2>Price Filtering</h2>
+            <label>Please Enter your Desired Price: </label>
+            <input type="text" id="Price" name="price" class="search-input" />
+            <button onclick="filterPrice()" class="fiter-btn">Filter</button>
+          </div>
+        </aside>
+        <section class="products"></section>
+      </section>
+    </main>
+    <!-- footer section -->
+    <footer>
+        <div class="copy-rights">
+            <h2>©Hecto - All Rights Reserved</h2>
+        </div>
+    </footer>
+
+    <script type="module" src="../scripts/ui-components/header.js"></script>
+    <script type="module" src="../scripts/ui-components/navbar.js"></script>
+    <script defer src="../scripts/products.js"></script>
+  </body>
+</html>

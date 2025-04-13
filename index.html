@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./styles/resets.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/component-styles/header.css" />
+    <link rel="stylesheet" href="./styles/component-styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/component-styles/hero.css" />
+    <link rel="stylesheet" href="./styles/component-styles/product-card.css" />
+    <link rel="stylesheet" href="./styles/component-styles/landing.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+  </head>
+
+  <body class="landing">
+    <header id="header"></header>
+    <nav id="navbar"></nav>
+    <section id="hero"></section>
+
+    <main id="main">
+      <section>
+        <h1>Latest Products</h1>
+      </section>
+      <section id="products-container"></section>
+    </main>
+
+    <footer>
+      <div class="copy-rights">
+        <h2>©Hecto - All Rights Reserved</h2>
+      </div>
+    </footer>
+    <script type="module" src="./scripts/ui-components/header.js"></script>
+    <script type="module" src="./scripts/ui-components/navbar.js"></script>
+    <script type="module" src="./scripts/ui-components/hero.js"></script>
+
+    <script
+      type="module"
+      src="./scripts/ui-components/product-card.js"
+    ></script>
+  </body>
+</html>
