@@ -194,7 +194,7 @@ function logCurrentAddress() {
               const data = JSON.parse(xhr.responseText);
               if (data) {
                 const { amenity, city } = data.address;
-                document.getElementById("address").value = amenity;
+                document.getElementById("address").value = amenity || city;
                 document.getElementById("city").value = city;
                 console.log(amenity, city);
               } else {
