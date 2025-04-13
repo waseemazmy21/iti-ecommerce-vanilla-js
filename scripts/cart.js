@@ -169,3 +169,70 @@ function checkout() {
 
 const checkoutButton = document.getElementById("checkout");
 checkoutButton.addEventListener("click", checkout);
+
+function logCurrentAddress() {
+  if (!navigator.geolocation) {
+    console.log("Geolocation is not supported by your browser.");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
+        true
+      );
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            try {
+              const data = JSON.parse(xhr.responseText);
+              if (data) {
+                const { amenity, city } = data.address;
+                document.getElementById("address").value = amenity;
+                document.getElementById("city").value = city;
+                console.log(amenity, city);
+              } else {
+                console.log("Could not find address.");
+              }
+            } catch (error) {
+              console.error("Error parsing response:", error);
+              console.log("Error fetching address. Please try again.");
+            }
+          } else {
+            console.error("HTTP error:", xhr.status);
+          }
+        }
+      };
+
+      xhr.onerror = function () {
+        console.log("Error fetching address. Please try again.");
+      };
+
+      xhr.send();
+    },
+    (error) => {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("Location permission denied.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("Location request timed out.");
+          break;
+        default:
+          alert("An error occurred getting location.");
+      }
+    }
+  );
+}
+
+const getAddressButton = document.getElementById("get-address");
+getAddressButton.addEventListener("click", logCurrentAddress);
