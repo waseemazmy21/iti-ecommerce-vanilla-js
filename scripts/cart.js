@@ -1,19 +1,3 @@
-const product = {
-  id: 1,
-  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-  price: 109.95,
-  description:
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  category: "men's clothing",
-  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-  rating: { rate: 3.9, count: 120 },
-};
-
-// cart = {
-//   product: product,
-//   quantity: 1,
-// };
-
 let cart = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -78,9 +62,28 @@ function createCartItem(item) {
   priceDiv.classList.add("cart-item-price");
   priceDiv.textContent = `$${item.product.price.toFixed(2)}` || "$0.00";
 
+  const incBtn = document.createElement("button");
+  incBtn.textContent = "+";
+  incBtn.addEventListener("click", () => {
+    addToCart(item.product);
+    renderCart();
+    updatePrice();
+  });
+  const decBtn = document.createElement("button");
+  decBtn.textContent = "-";
+  decBtn.addEventListener("click", () => {
+    removeFromCart(item.product);
+    renderCart();
+    updatePrice();
+  });
+
+  const quantityPara = document.createElement("p");
+  quantityPara.textContent = item.quantity || 0;
   const quantityDiv = document.createElement("div");
   quantityDiv.classList.add("cart-item-quantity");
-  quantityDiv.textContent = item.quantity || 0;
+  quantityDiv.appendChild(decBtn);
+  quantityDiv.appendChild(quantityPara);
+  quantityDiv.appendChild(incBtn);
 
   const totalDiv = document.createElement("div");
   totalDiv.classList.add("cart-item-total");
@@ -166,3 +169,70 @@ function checkout() {
 
 const checkoutButton = document.getElementById("checkout");
 checkoutButton.addEventListener("click", checkout);
+
+function logCurrentAddress() {
+  if (!navigator.geolocation) {
+    console.log("Geolocation is not supported by your browser.");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
+        true
+      );
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            try {
+              const data = JSON.parse(xhr.responseText);
+              if (data) {
+                const { amenity, city } = data.address;
+                document.getElementById("address").value = amenity;
+                document.getElementById("city").value = city;
+                console.log(amenity, city);
+              } else {
+                console.log("Could not find address.");
+              }
+            } catch (error) {
+              console.error("Error parsing response:", error);
+              console.log("Error fetching address. Please try again.");
+            }
+          } else {
+            console.error("HTTP error:", xhr.status);
+          }
+        }
+      };
+
+      xhr.onerror = function () {
+        console.log("Error fetching address. Please try again.");
+      };
+
+      xhr.send();
+    },
+    (error) => {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("Location permission denied.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("Location request timed out.");
+          break;
+        default:
+          alert("An error occurred getting location.");
+      }
+    }
+  );
+}
+
+const getAddressButton = document.getElementById("get-address");
+getAddressButton.addEventListener("click", logCurrentAddress);
