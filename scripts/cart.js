@@ -1,19 +1,3 @@
-const product = {
-  id: 1,
-  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-  price: 109.95,
-  description:
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  category: "men's clothing",
-  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-  rating: { rate: 3.9, count: 120 },
-};
-
-// cart = {
-//   product: product,
-//   quantity: 1,
-// };
-
 let cart = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -78,9 +62,28 @@ function createCartItem(item) {
   priceDiv.classList.add("cart-item-price");
   priceDiv.textContent = `$${item.product.price.toFixed(2)}` || "$0.00";
 
+  const incBtn = document.createElement("button");
+  incBtn.textContent = "+";
+  incBtn.addEventListener("click", () => {
+    addToCart(item.product);
+    renderCart();
+    updatePrice();
+  });
+  const decBtn = document.createElement("button");
+  decBtn.textContent = "-";
+  decBtn.addEventListener("click", () => {
+    removeFromCart(item.product);
+    renderCart();
+    updatePrice();
+  });
+
+  const quantityPara = document.createElement("p");
+  quantityPara.textContent = item.quantity || 0;
   const quantityDiv = document.createElement("div");
   quantityDiv.classList.add("cart-item-quantity");
-  quantityDiv.textContent = item.quantity || 0;
+  quantityDiv.appendChild(decBtn);
+  quantityDiv.appendChild(quantityPara);
+  quantityDiv.appendChild(incBtn);
 
   const totalDiv = document.createElement("div");
   totalDiv.classList.add("cart-item-total");
