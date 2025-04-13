@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - Hekto</title>
-    <link rel="stylesheet" href="../styles/login&signup.css" />
-    <script src="../scripts/login&signup.js" defer></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="../styles/login&signup.css">
+</head>
+
+<body>
     <header>
-      <div class="top-bar">
-        <span>zyad.890@gmail.com</span>
-        <span>|</span>
-        <span>(+123) 456 7890</span>
-      </div>
+        <div class="top-bar">
+            <span>zyad.890@gmail.com</span>
+            <span>|</span>
+            <span>(+123) 456 7890</span>
+        </div>
     </header>
 
     <div class="navbar">
-      <div class="logo">Hekto</div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./products.html">Products</a></li>
-        <li><a href="./cart.html">Cart</a></li>
-      </ul>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button>🔍</button>
-      </div>
+        <div class="logo">Hekto</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a href="./cart.html">Cart</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button>🔍</button>
+        </div>
     </div>
 
     <main>
-      <section class="account-section">
-        <h2>Create Account</h2>
-        <p class="breadcrumb"></p>
-        <div class="login-box">
-          <form id="signupForm">
-            <h3>Sign Up</h3>
-            <p>Please fill in the details below to create your account.</p>
-            <input type="text" id="fullName" placeholder="Full Name" required />
-            <input
-              type="email"
-              id="email"
-              placeholder="Email Address"
-              required
-            />
-            <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              required
-            />
-            <input
-              type="password"
-              id="confirmPassword"
-              placeholder="Confirm Password"
-              required
-            />
-            <button type="submit">Sign Up</button>
-            <p>Already have an account? <a href="login.html">Login here</a></p>
-          </form>
-        </div>
-      </section>
+        <section class="account-section">
+            <h2>Create Account</h2>
+            <p class="breadcrumb"></p>
+            <div class="login-box">
+                <form id="signupForm">
+                    <h3>Sign Up</h3>
+                    <p>Please fill in the details below to create your account.</p>
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p>Already have an account? <a href="./login.html">Login here</a></p>
+                </form>
+            </div>
+
+        </section>
+
     </main>
 
     <footer>
-      <p>&copy; 2025 Hekto - All Rights Reserved</p>
+        <p>&copy; 2025 Hekto - All Rights Reserved</p>
     </footer>
-  </body>
+
+
+
+    <script src="../scripts/signup.js"></script>
+
+</body>
+</body>
+
 </html>
