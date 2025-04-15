@@ -93,7 +93,7 @@ header {
   transition: 0.4s all ease-in-out;
 }
 .nav-bar-links .home-page:hover,
-.nav-bar-links a:hover {  
+.nav-bar-links a:hover {
   transform: 0.8s ease-in-out;
   color: rgba(71, 73, 73, 0.716);
 }

@@ -1,61 +1,57 @@
-@import url("../main.css");
-
-.hero {
-    height: 764px;
-    width: 100%;
-    background-color: var(--lavender-color);
+/*Hero Section*/
+.hero-section {
+  background-color: var(--heroSection);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 50px;
+  gap: 20px;
 }
-
-.hero .left-img {
-    margin-top: 0;
-    padding-top: 0;
-    object-fit: none;
-    float: left;
+.hero-section-img1 {
+  width: 150px;
+  padding-bottom: 200px;
 }
-
-.middle-section {
-    float: left;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+.hero-section-component {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 500px;
+  padding: 20px;
 }
-.middle-section h5 {
-    margin-top: 15%;
-    color: var(--purple-color);
+.hero-section-component-p1 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: var(--hero-section-primary-color);
 }
-
-.middle-section h1 {
-    width: 600px;
-    font-size: 50px;
-    font-weight: bolder;
-    word-wrap: break-word;
+.hero-section-component-h1 {
+  font-size: 20px;
+  color: var(--hero-section-text-color);
+  padding-bottom: 10px;
 }
-
-.middle-section p {
-    width: 600px;
-    word-wrap: break-word;
-    color: darkgray;
+.hero-section-component-p2 {
+  font-size: 16px;
+  color: #666;
 }
-
-.middle-section button {
-    width: 163px;
-    height: 50px;
-    border-style: none;
-    background-color: var(--purple-color);
-    color: var(--snow-color);
-    font-weight: bold;
-    margin-bottom: 25%;
+.hero-section-shop-btn {
+  background-color: var(--hero-section-primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.6s all ease-in-out;
 }
-
-.middle-section button:hover{
-    background-color: var(--snow-color);
-    color: var(--purple-color);
-    border-style: solid;
-    border-color: var(--purple-color);
+.hero-section-shop-btn:hover {
+  color: var(--hero-section-primary-color);
+  transition: 0.8s all ease-in-out;
+  background-color: white;
 }
-
-.hero .right-img {
-    width: 629px;
-    object-fit: none;
+.hero-section-img2 {
+  width: 400px;
 }
